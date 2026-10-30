@@ -13,8 +13,9 @@ class CadastroViewModel extends ChangeNotifier {
 
   Categoria? get categoriaSelecionada => _categoriaSelecionada;
 
-  String? get erroCategoria =>
-      (_tentouSalvar && _categoriaSelecionada == null) ? 'Selecione uma categoria' : null;
+  String? get erroCategoria => (_tentouSalvar && _categoriaSelecionada == null)
+      ? 'Selecione uma categoria'
+      : null;
 
   void selecionarCategoria(Categoria? categoria) {
     _categoriaSelecionada = categoria;
@@ -24,19 +25,23 @@ class CadastroViewModel extends ChangeNotifier {
   double? _lerPreco(String? texto) =>
       double.tryParse((texto ?? '').trim().replaceAll(',', '.'));
 
-  String? validarNome(String? valor) =>
-      (valor == null || valor.trim().isEmpty) ? 'Informe o nome do produto' : null;
+  String? validarNome(String? valor) => (valor == null || valor.trim().isEmpty)
+      ? 'Informe o nome do produto'
+      : null;
 
   String? validarPreco(String? valor) {
     final preco = _lerPreco(valor);
     return (preco == null || preco <= 0) ? 'Informe um preço válido' : null;
   }
 
-  bool salvarProduto({required String nome, required String preco}){
+  bool salvarProduto({required String nome, required String preco}) {
     _tentouSalvar = true;
-    final bool valido = validarNome(nome) == null && validarPreco(preco) == null && _categoriaSelecionada != null;
+    final bool valido =
+        validarNome(nome) == null &&
+        validarPreco(preco) == null &&
+        _categoriaSelecionada != null;
 
-    if (!valido){
+    if (!valido) {
       notifyListeners();
       return false;
     }
@@ -46,7 +51,7 @@ class CadastroViewModel extends ChangeNotifier {
         nome: nome.trim(),
         preco: _lerPreco(preco)!,
         categoria: _categoriaSelecionada!,
-      )
+      ),
     );
     return true;
   }
