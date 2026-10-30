@@ -1,5 +1,6 @@
 import '../model/produto.dart';
 import 'package:flutter/foundation.dart';
+
 class ProdutosViewModel extends ChangeNotifier {
   final List<Produto> _produtos = [];
 
@@ -17,6 +18,7 @@ class ProdutosViewModel extends ChangeNotifier {
   //Adiciona ao carrinho e retorna uma mensagem para exibir na snackbar
   String adicionarAoCarrinho(Produto produto) {
     _carrinho.add(produto);
+    notifyListeners();
     return '${produto.nome} adicionado ao carrinho!';
   }
 }
