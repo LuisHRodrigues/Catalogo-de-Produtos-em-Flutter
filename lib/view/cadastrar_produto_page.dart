@@ -75,7 +75,9 @@ class _CadastrarProdutoPageState extends State<CadastrarProdutoPage> {
               const SizedBox(height: 24),
               TextFormField(
                 controller: _precoController,
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]')),
                 ],
