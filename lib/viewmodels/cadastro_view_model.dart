@@ -34,7 +34,7 @@ class CadastroViewModel extends ChangeNotifier {
 
   bool salvarProduto({required String nome, required String preco}){
     _tentouSalvar = true;
-    final valido = validarNome(nome) == null && validarPreco(preco) == null && _categoriaSelecionada != null;
+    final bool valido = validarNome(nome) == null && validarPreco(preco) == null && _categoriaSelecionada != null;
 
     if (!valido){
       notifyListeners();
