@@ -5,14 +5,9 @@ class Produto {
   final double preco;
   final Categoria categoria;
 
-  Produto({
-    required this.nome,
-    required this.preco,
-    required this.categoria,
-  });
+  Produto({required this.nome, required this.preco, required this.categoria});
 
   String getPrecoFormatado() {
     return 'R\$ ${preco.toStringAsFixed(2).replaceAll('.', ',')}';
   }
-
 }
