@@ -77,11 +77,3 @@ flutter run -d chrome  # para rodar na web
 ```
 
 O repositório tem as plataformas Android e Web configuradas.
-
-## Limitações conhecidas
-
-- Sem persistência: produtos e carrinho somem ao reiniciar o app.
-- O catálogo começa vazio; é preciso cadastrar produtos antes de comprar.
-- O carrinho não agrupa itens repetidos (cada clique em "Comprar" adiciona uma linha) e não permite remover itens nem finalizar a compra.
-- `test/widget_test.dart` é o teste padrão do Flutter e ainda referencia a classe `MyApp`, que não existe mais (o app agora é `ProdutosApp`); ele precisa ser atualizado para o `flutter test` passar.
-- A formatação de preço está duplicada: `Categoria.formatarPreco` (em `apresentacao.dart`) e `Produto.getPrecoFormatado()` fazem o mesmo, e a tela do catálogo formata o preço por conta própria, com ponto em vez de vírgula, ao contrário do card do carrinho.
