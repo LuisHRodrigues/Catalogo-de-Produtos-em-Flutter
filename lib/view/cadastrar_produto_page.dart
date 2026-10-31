@@ -6,7 +6,7 @@ import '../viewmodels/cadastro_view_model.dart';
 import '../viewmodels/produtos_view_model.dart';
 import 'apresentacao.dart';
 
-/// View da tela de cadastro. A validação e a regra de salvar ficam no ViewModel.
+
 class CadastrarProdutoPage extends StatefulWidget {
   const CadastrarProdutoPage({super.key, required this.produtosViewModel});
 
